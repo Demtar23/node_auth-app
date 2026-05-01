@@ -36,7 +36,7 @@ function validatePassword(password) {
   }
 
   if (errors.length > 0) {
-    return `Password must be contain ${errors.join(', ')}`;
+    return `Password must contain ${errors.join(', ')}`;
   }
 
   return null;
