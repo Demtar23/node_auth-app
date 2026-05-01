@@ -14,6 +14,7 @@ authRouter.post(
 
 authRouter.get(
   '/activation/:email/:token',
+  guestMiddleware,
   catchError(authController.activate),
 );
 
