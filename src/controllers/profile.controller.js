@@ -133,7 +133,7 @@ const updateEmail = async (req, res) => {
 
   if (!isPasswordValid) {
     return res.status(401).json({
-      errors: { password: 'Password is incorect' },
+      errors: { password: 'Password is incorrect' },
       message: 'Validation error',
     });
   }
