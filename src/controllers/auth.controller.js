@@ -61,12 +61,13 @@ const sendAuthentication = async (res, user) => {
     maxAge: 30 * 24 * 60 * 60 * 1000,
     httpOnly: true,
     sameSite: 'none',
-    secure: false, // потім змінити на true
+    secure: true,
   });
 
   res.send({
     user: userData,
     accessToken,
+    redirectTo: '/profile',
   });
 };
 
@@ -190,6 +191,7 @@ export const requestPasswordReset = async (req, res) => {
 
   res.json({
     message: 'If email exists, a reset link has been sent.',
+    redirectTo: '/login',
   });
 };
 
@@ -240,6 +242,7 @@ export const resetPassword = async (req, res) => {
 
   res.json({
     message: 'Password has been updated successfully',
+    redirectTo: '/login',
   });
 };
 
